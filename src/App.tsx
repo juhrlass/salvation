@@ -1,11 +1,9 @@
 export default function App() {
     return (
         <>
-        <h1 className="text-3xl font-bold underline">
-            Hello world!
-        </h1>
 
-        <video autoPlay={true} controls={false} loop={true} className={"aspect-video h-full"} src={"/content/video_01.mp4"} />
+
+        <video autoPlay={true} controls={true} loop={true} className={"h-screen w-screen object-cover"} src={"/content/video_01.mp4"} />
         </>
     )
 }
