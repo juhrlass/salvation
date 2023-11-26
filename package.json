@@ -15,9 +15,11 @@
     "sync": "rimraf --glob ../riddance/app/src/main/assets/* && syncdir dist/ ../riddance/app/src/main/assets --exclude content -do --quiet"
   },
   "dependencies": {
+    "clsx": "^2.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "framer-motion": "^10.16.5"
+    "framer-motion": "^10.16.5",
+    "tailwind-merge": "^2.0.0"
   },
   "devDependencies": {
     "@ianvs/prettier-plugin-sort-imports": "^4.1.1",
