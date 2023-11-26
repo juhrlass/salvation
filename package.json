@@ -9,6 +9,9 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "outdated": "yarn outdated",
     "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "format:write": "prettier --write \"**/*.{ts,tsx,mdx}\" --cache",
+    "format:check": "prettier --check \"**/*.{ts,tsx,mdx}\" --cache",
     "sync": "rimraf --glob ../riddance/app/src/main/assets/* && syncdir dist/ ../riddance/app/src/main/assets --exclude content -do --quiet"
   },
   "dependencies": {
