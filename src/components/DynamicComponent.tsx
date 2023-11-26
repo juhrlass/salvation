@@ -2,10 +2,15 @@ import React from "react"
 
 import { Grid } from "./Grid.tsx"
 import { HelloMirrorsLogo } from "./HelloMirrorsLogo.tsx"
+import {Card} from "./Card.tsx";
+import {Fullscreen} from "./Fullscreen.tsx";
 
 const dynamicComponents = {
+  fullscreen:Fullscreen,
+  card: Card,
   grid: Grid,
   logo: HelloMirrorsLogo,
+
 }
 
 interface DynamicComponentProps {
