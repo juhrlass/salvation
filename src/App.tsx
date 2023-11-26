@@ -1,7 +1,7 @@
 import {DynamicComponent} from "./components/DynamicComponent.tsx"
 import data from './content.json';
 
-let slug = "video"
+let slug = "bingo"
 
 export default function App() {
     return (

@@ -79,6 +79,19 @@
           }
         ]
       }
+    ],
+    "bingo": [
+      {
+        "_uid": "fullscreen",
+        "component": "fullscreen",
+        "children": [
+          {
+            "_uid": "BUY6Dretwaween9e1",
+            "component": "bingoGame",
+            "totalNumbers": "100"
+          }
+        ]
+      }
     ]
   }
 }

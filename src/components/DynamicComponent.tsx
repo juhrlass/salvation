@@ -6,6 +6,7 @@ import { Grid } from "./Grid.tsx"
 import { HelloMirrorsLogo } from "./HelloMirrorsLogo.tsx"
 import { ResponsiveContainer } from "./ResponsiveContainer.tsx"
 import {Video} from "./Video.tsx";
+import {BingoGame} from "./BingoGame.tsx";
 
 const dynamicComponents = {
   fullscreen: Fullscreen,
@@ -13,7 +14,8 @@ const dynamicComponents = {
   grid: Grid,
   logo: HelloMirrorsLogo,
   responsiveContainer: ResponsiveContainer,
-  video: Video
+  video: Video,
+  bingoGame: BingoGame
 }
 
 interface DynamicComponentProps {
