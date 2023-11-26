@@ -35,7 +35,7 @@ export const BingoGame = ({ block }) => {
   }
 
   return (
-    <div className="w-full mx-auto p-4 flex flex-col grow items-center gap-y-2">
+    <div className="w-full mx-auto p-4 flex flex-col grow items-center gap-y-4">
       <div className="flex w-full justify-between">
           <div className="justify-center flex flex-col">
           <button
@@ -70,9 +70,9 @@ export const BingoGame = ({ block }) => {
             key={index}
             className={`${
               drawnNumbers.includes(number)
-                ? "bg-blue-500 text-white"
-                : "bg-gray-300"
-            } text-center py-2 rounded text-5xl font-bold`}
+                ? "bg-blue-500 "
+                : "bg-gray-600"
+            } text-center py-2 rounded-full text-5xl font-bold justify-center flex flex-col`}
           >
             {number}
           </div>
