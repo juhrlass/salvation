@@ -19,7 +19,9 @@ export const Grid = ({ block }) => {
         }
       )}
     >
-        {block.children.map((nestedBlock) => DynamicComponent({block: nestedBlock }))}
+      {block.children.map((nestedBlock) => {
+        return <>{DynamicComponent({ block: nestedBlock })}</>
+      })}
     </div>
   )
 }

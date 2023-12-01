@@ -7,6 +7,8 @@ import { HelloMirrorsLogo } from "./HelloMirrorsLogo.tsx"
 import { ResponsiveContainer } from "./ResponsiveContainer.tsx"
 import {Video} from "./Video.tsx";
 import {BingoGame} from "./BingoGame.tsx";
+import {Carousel} from "./Carousel.tsx";
+import {ImageSlider} from "./ImageSlider.tsx";
 
 const dynamicComponents = {
   fullscreen: Fullscreen,
@@ -15,11 +17,19 @@ const dynamicComponents = {
   logo: HelloMirrorsLogo,
   responsiveContainer: ResponsiveContainer,
   video: Video,
-  bingoGame: BingoGame
+  carousel: Carousel,
+  imageSlider: ImageSlider,
+  bingoGame: BingoGame,
+
+}
+
+interface Block {
+  _uid: string,
+  component: string
 }
 
 interface DynamicComponentProps {
-  block: never
+  block: Block
 }
 
 export const DynamicComponent = (props: DynamicComponentProps) => {

@@ -1,5 +1,5 @@
-export const Video = () => {
-  return (
+export const Video = ({ block }) => {
+    return (
       <div className={"group aspect-video relative flex flex-col overflow-hidden rounded-lg"}>
         <video
             autoPlay

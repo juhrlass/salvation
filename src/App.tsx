@@ -1,12 +1,7 @@
-import { ReactNode } from "react"
-import { Root } from "postcss"
 import {
   createBrowserRouter,
   Navigate,
-  Route,
-  BrowserRouter as Router,
   RouterProvider,
-  Routes,
   useLoaderData,
 } from "react-router-dom"
 
@@ -14,12 +9,11 @@ import { DynamicComponent } from "./components/DynamicComponent.tsx"
 import data from "./content.json"
 
 function Scene() {
-  const slug = useLoaderData()
+  const slug = useLoaderData() as string
 
   return (
     <>
-      {" "}
-      {data.content[slug].map((block) => DynamicComponent({ block: block }))}
+      {data.scenes[slug].map((block) => DynamicComponent({ block: block }))}
     </>
   )
 }
