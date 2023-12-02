@@ -5,6 +5,7 @@
         "_uid": "fullscreen",
         "component": "fullscreen",
         "children": [
+
           {
             "_uid": "BUY6Dretwen9e1",
             "component": "responsiveContainer",
@@ -12,7 +13,8 @@
             "children": [
               {
                 "_uid": "BUY6Drn9e1",
-                "component": "logo"
+                "component": "logo",
+                "url": "/hm_logo_text.svg"
               }
             ]
           },
@@ -29,67 +31,86 @@
                 "children": [
                   {
                     "_uid": "BUY6Drn9e3",
-                    "component": "card"
+                    "component": "card",
+                    "link": "/scene/3d"
+                  },
+                  {
+                    "_uid": "BUYaa6Drn9e2",
+                    "component": "card",
+                    "link": "/scene/bingo"
+                  },
+                  {
+                    "_uid": "BUYds6Drn9e3",
+                    "component": "card",
+                    "link": "/scene/images"
                   },
                   {
                     "_uid": "BUY6Drn9e2",
-                    "component": "card"
-                  }
-                ]
-              },
-              {
-                "_uid": "asdasfda",
-                "component": "imageSlider",
-                "images": [
-                  {
-                    "title": "Grönland",
-                    "link": "https://hellomirrors.com",
-                    "url": "https://images.unsplash.com/photo-1438196474182-fdf680a22ec2?q=80&w=640&auto=format&fit=crop"
-                  },
-                  {
-                    "title": "Serengeti",
-                    "link": "https://hellomirrors.com",
-                    "url": "https://images.unsplash.com/photo-1523805009345-7448845a9e53?q=80&w=640&auto=format&fit=crop"
-                  },
-                  {
-                    "title": "Uluru",
-                    "link": "https://hellomirrors.com",
-                    "url": "https://images.unsplash.com/photo-1557214997-7eae7e0e7aaa?q=80&w=640&auto=format&fit=crop"
-                  },
-                  {
-                    "title": "Yosemite",
-                    "link": "https://robkendal.co.uk",
-                    "url": "https://images.unsplash.com/photo-1549221838-126dc3ebf29f?q=80&w=640&auto=format&fit=crop"
-                  },
-                  {
-                    "title": "Drei Zinnen",
-                    "link": "https://hellomirrors.com",
-                    "url": "https://images.unsplash.com/photo-1579609872305-cd979b49650f?q=80&w=640&auto=format&fit=crop"
-                  },
-                  {
-                    "title": "Neuschwanstein",
-                    "link": "https://hellomirrors.com",
-                    "url": "https://images.unsplash.com/photo-1609237756221-88c4a93846b2?q=80&w=640&auto=format&fit=crop"
-                  },
-                  {
-                    "title": "Irland",
-                    "link": "https://hellomirrors.com",
-                    "url": "https://images.unsplash.com/photo-1624821708342-a8dd2e1a13c4?q=80&w=640&auto=format&fit=crop"
-                  },
-                  {
-                    "title": "Portofino",
-                    "link": "https://hellomirrors.com",
-                    "url": "https://images.unsplash.com/photo-1549893072-4bc678117f45?q=80&w=640&auto=format&fit=crop"
-                  },
-                  {
-                    "title": "Golf von Thailand",
-                    "link": "https://hellomirrors.com",
-                    "url": "https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?q=80&w=640&auto=format&fit=crop"
+                    "component": "card",
+                    "link": "/scene/video"
                   }
                 ]
               }
             ]
+          },
+          {
+            "_uid": "BUY6Dretwen119e1",
+            "component": "responsiveContainer",
+            "width": "limited",
+            "padding": "horizontal",
+            "children": [   {
+              "_uid": "asdasfda",
+              "component": "imageSlider",
+              "images": [
+                {
+                  "title": "Grönland",
+                  "link": "https://hellomirrors.com",
+                  "url": "https://images.unsplash.com/photo-1438196474182-fdf680a22ec2?q=80&w=640&auto=format&fit=crop"
+                },
+                {
+                  "title": "Serengeti",
+                  "link": "https://hellomirrors.com",
+                  "url": "https://images.unsplash.com/photo-1523805009345-7448845a9e53?q=80&w=640&auto=format&fit=crop"
+                },
+                {
+                  "title": "Uluru",
+                  "link": "https://hellomirrors.com",
+                  "url": "https://images.unsplash.com/photo-1557214997-7eae7e0e7aaa?q=80&w=640&auto=format&fit=crop"
+                },
+                {
+                  "title": "Yosemite",
+                  "link": "https://robkendal.co.uk",
+                  "url": "https://images.unsplash.com/photo-1549221838-126dc3ebf29f?q=80&w=640&auto=format&fit=crop"
+                },
+                {
+                  "title": "Drei Zinnen",
+                  "link": "https://hellomirrors.com",
+                  "url": "https://images.unsplash.com/photo-1579609872305-cd979b49650f?q=80&w=640&auto=format&fit=crop"
+                },
+                {
+                  "title": "Neuschwanstein",
+                  "link": "https://hellomirrors.com",
+                  "url": "https://images.unsplash.com/photo-1609237756221-88c4a93846b2?q=80&w=640&auto=format&fit=crop"
+                },
+                {
+                  "title": "Irland",
+                  "link": "https://hellomirrors.com",
+                  "url": "https://images.unsplash.com/photo-1624821708342-a8dd2e1a13c4?q=80&w=640&auto=format&fit=crop"
+                },
+                {
+                  "title": "Portofino",
+                  "link": "https://hellomirrors.com",
+                  "url": "https://images.unsplash.com/photo-1549893072-4bc678117f45?q=80&w=640&auto=format&fit=crop"
+                },
+                {
+                  "title": "Golf von Thailand",
+                  "link": "https://hellomirrors.com",
+                  "url": "https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?q=80&w=640&auto=format&fit=crop"
+                }
+              ]
+            }]
           }
+
         ]
       }
     ],
@@ -98,6 +119,10 @@
         "_uid": "fullscreen",
         "component": "fullscreen",
         "children": [
+          {
+            "_uid": "BUYaaasdasd6Drn9e2",
+            "component": "navigation"
+          },
           {
             "_uid": "BUY6Dretwen9e1",
             "component": "responsiveContainer",
@@ -132,10 +157,15 @@
       }
     ],
     "bingo": [
+
       {
         "_uid": "fullscreen",
         "component": "fullscreen",
         "children": [
+          {
+            "_uid": "BUYaaasdasd6Drn9e2",
+            "component": "navigation"
+          },
           {
             "_uid": "BUY6Dretwaween9e1",
             "component": "bingoGame",
@@ -149,6 +179,10 @@
         "_uid": "fullscreen",
         "component": "fullscreen",
         "children": [
+          {
+            "_uid": "BUYaaasdasd6Drn9e2",
+            "component": "navigation"
+          },
           {
             "_uid": "sdesafeasgfewq",
             "component": "carousel",
@@ -199,6 +233,22 @@
                 "url": "https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?q=80&w=640&auto=format&fit=crop"
               }
             ]
+          }
+        ]
+      }
+    ],
+    "3d": [
+      {
+        "_uid": "BUYaaasdasd6Drn9e2",
+        "component": "navigation"
+      },
+      {
+        "_uid": "fullscreen",
+        "component": "fullscreen",
+        "children": [
+          {
+            "_uid": "BUY6Dretwaetrewaween9e1",
+            "component": "test3d"
           }
         ]
       }

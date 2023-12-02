@@ -21,7 +21,7 @@ function Scene() {
 const router = createBrowserRouter([
   {
     path: "*",
-    element: <Navigate to="/scene/video" />,
+    element: <Navigate to="/scene/home" />,
   },
   {
     path: "/scene/:slug",

@@ -3,24 +3,27 @@ import React from "react"
 import { Card } from "./Card.tsx"
 import { Fullscreen } from "./Fullscreen.tsx"
 import { Grid } from "./Grid.tsx"
-import { HelloMirrorsLogo } from "./HelloMirrorsLogo.tsx"
+import { Image } from "./Image.tsx"
 import { ResponsiveContainer } from "./ResponsiveContainer.tsx"
 import {Video} from "./Video.tsx";
 import {BingoGame} from "./BingoGame.tsx";
 import {Carousel} from "./Carousel.tsx";
 import {ImageSlider} from "./ImageSlider.tsx";
+import Test3D from "./Test3D.tsx";
+import {Navigation} from "./Navigation.tsx";
 
 const dynamicComponents = {
   fullscreen: Fullscreen,
   card: Card,
   grid: Grid,
-  logo: HelloMirrorsLogo,
+  logo: Image,
   responsiveContainer: ResponsiveContainer,
   video: Video,
   carousel: Carousel,
   imageSlider: ImageSlider,
   bingoGame: BingoGame,
-
+  test3d:Test3D,
+  navigation:Navigation
 }
 
 interface Block {
