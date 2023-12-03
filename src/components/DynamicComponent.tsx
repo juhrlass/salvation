@@ -1,16 +1,17 @@
 import React from "react"
+import { Component } from "salvation"
 
+import { BingoGame } from "./BingoGame.tsx"
 import { Card } from "./Card.tsx"
+import { Carousel } from "./Carousel.tsx"
 import { Fullscreen } from "./Fullscreen.tsx"
 import { Grid } from "./Grid.tsx"
 import { Image } from "./Image.tsx"
+import { ImageSlider } from "./ImageSlider.tsx"
+import { Navigation } from "./Navigation.tsx"
 import { ResponsiveContainer } from "./ResponsiveContainer.tsx"
-import {Video} from "./Video.tsx";
-import {BingoGame} from "./BingoGame.tsx";
-import {Carousel} from "./Carousel.tsx";
-import {ImageSlider} from "./ImageSlider.tsx";
-import Test3D from "./Test3D.tsx";
-import {Navigation} from "./Navigation.tsx";
+import Test3D from "./Test3D.tsx"
+import { Video } from "./Video.tsx"
 
 const dynamicComponents = {
   fullscreen: Fullscreen,
@@ -22,22 +23,20 @@ const dynamicComponents = {
   carousel: Carousel,
   imageSlider: ImageSlider,
   bingoGame: BingoGame,
-  test3d:Test3D,
-  navigation:Navigation
-}
-
-interface Block {
-  _uid: string,
-  component: string
+  test3d: Test3D,
+  navigation: Navigation,
 }
 
 interface DynamicComponentProps {
-  block: Block
+  block: Component
 }
 
 export const DynamicComponent = (props: DynamicComponentProps) => {
-  if (typeof dynamicComponents[props.block.component] !== "undefined") {
-    return React.createElement(dynamicComponents[props.block.component], {
+
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+  const lookupComponent = dynamicComponents[props.block.component]
+  if (lookupComponent) {
+    return React.createElement(lookupComponent, {
       key: props.block._uid,
       block: props.block,
     })

@@ -1,49 +1,45 @@
-import {useEffect, useRef, useState} from "react"
+import { useState } from "react"
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/20/solid"
+import { ImageSliderComponent } from "salvation"
+import { useInterval } from "usehooks-ts"
 
 import { cn } from "../lib/utils"
 
-export const ImageSlider = ({ block }) => {
- 
-  const [currentIndex, setCurrentIndex] = useState(0)
+interface ImageSliderProps {
+  block: ImageSliderComponent
+}
+
+export const ImageSlider = (props: ImageSliderProps) => {
+  const [currentIndex, setCurrentIndex] = useState<number>(0)
 
   const prevSlide = () => {
     const isFirstSlide = currentIndex === 0
-    const newIndex = isFirstSlide ? block.images.length - 1 : currentIndex - 1
+    const newIndex = isFirstSlide
+      ? props.block.images.length - 1
+      : currentIndex - 1
     setCurrentIndex(newIndex)
   }
 
   const nextSlide = () => {
-    const isLastSlide = currentIndex === block.images.length - 1
+    const isLastSlide = currentIndex === props.block.images.length - 1
     const newIndex = isLastSlide ? 0 : currentIndex + 1
     setCurrentIndex(newIndex)
   }
 
-  const goToSlide = (slideIndex) => {
+  const goToSlide = (slideIndex: number) => {
     setCurrentIndex(slideIndex)
   }
 
-  const timeoutRef = useRef(null)
-
-  function resetTimeout() {
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current)
-    }
-  }
-
-  useEffect(() => {
-    resetTimeout()
-    timeoutRef.current = setTimeout(() => nextSlide(), 5000)
-
-    return () => {
-      resetTimeout()
-    }
-  })
+  useInterval(() => {
+    nextSlide()
+  }, 5000)
 
   return (
     <div className="group relative m-auto aspect-video w-full">
       <div
-        style={{ backgroundImage: `url(${block.images[currentIndex].url})` }}
+        style={{
+          backgroundImage: `url(${props.block.images[currentIndex].url})`,
+        }}
         className="h-full w-full rounded-2xl bg-cover bg-center duration-500"
       ></div>
       {/* Left Arrow */}
@@ -55,7 +51,7 @@ export const ImageSlider = ({ block }) => {
         <ChevronRightIcon onClick={nextSlide} className="h-8 w-8" />
       </div>
       <div className="left-1 top-4 flex justify-center py-2">
-        {block.images.map((slide, slideIndex) => (
+        {props.block.images.map((slide, slideIndex) => (
           <div
             key={slideIndex}
             onClick={() => goToSlide(slideIndex)}
@@ -65,6 +61,7 @@ export const ImageSlider = ({ block }) => {
                 "scale-150": slideIndex === currentIndex,
               }
             )}
+            data-slide={slide.title}
           ></div>
         ))}
       </div>

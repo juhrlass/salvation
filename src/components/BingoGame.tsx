@@ -1,10 +1,14 @@
 import { useState } from "react"
+import {BingoComponent} from "salvation";
 
-export const BingoGame = ({ block }) => {
-  const { totalNumbers } = block
+interface BingoGameProps {
+  block: BingoComponent
+}
+export const BingoGame = (props:BingoGameProps) => {
+  const  totalNumbers  = props.block.totalNumbers
 
-  const [drawnNumbers, setDrawnNumbers] = useState([])
-  const [currentNumber, setCurrentNumber] = useState(null)
+  const [drawnNumbers, setDrawnNumbers] = useState<number[]>([])
+  const [currentNumber, setCurrentNumber] = useState<number|null>(null)
 
   const allNumbers = Array.from(
     { length: totalNumbers },

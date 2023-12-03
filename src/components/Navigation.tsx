@@ -1,10 +1,19 @@
-import {ChevronLeftIcon} from "@heroicons/react/20/solid";
-import {useNavigate} from "react-router-dom";
+import { ChevronLeftIcon } from "@heroicons/react/20/solid";
+import { useNavigate } from "react-router-dom"
+import {NavigationComponent} from "salvation";
+import {useEffect} from "react";
 
-export const Navigation = ({block}) => {
+interface NavigationProps {
+    block:NavigationComponent
+}
+
+export const Navigation = (props: NavigationProps) => {
 
     const navigate = useNavigate();
 
+    useEffect(() => {
+        console.log("Autohide: "+props.block.autohide)
+    }, [props.block.autohide]);
 
     return (
 

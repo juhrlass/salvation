@@ -1,11 +1,15 @@
-import {useEffect, useRef, useState} from "react";
+import { useEffect, useRef, useState } from "react";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/20/solid"
+import {CarouselComponent} from "salvation";
 
+interface CarouselProps {
+    block:CarouselComponent
+}
 
-export const Carousel = ({block}) => {
+export const Carousel = (props:CarouselProps) => {
     const maxScrollWidth = useRef(0);
     const [currentIndex, setCurrentIndex] = useState(0);
-    const carousel = useRef(null);
+    const carousel = useRef<HTMLDivElement>(null);
 
     const movePrev = () => {
         if (currentIndex > 0) {
@@ -22,7 +26,7 @@ export const Carousel = ({block}) => {
         }
     };
 
-    const isDisabled = (direction) => {
+    const isDisabled = (direction:string) => {
         if (direction === 'prev') {
             return currentIndex <= 0;
         }
@@ -37,7 +41,7 @@ export const Carousel = ({block}) => {
     };
 
     useEffect(() => {
-        if (carousel !== null && carousel.current !== null) {
+        if (carousel?.current !== null) {
             carousel.current.scrollLeft = carousel.current.offsetWidth * currentIndex;
         }
     }, [currentIndex]);
@@ -74,29 +78,29 @@ export const Carousel = ({block}) => {
                     ref={carousel}
                     className="relative flex gap-1 overflow-hidden scroll-smooth snap-x snap-mandatory touch-pan-x z-0"
                 >
-                    {block.images.map((resource, index) => {
+                    {props.block.images.map((image, index) => {
                         return (
                             <div
                                 key={index}
                                 className=" text-center relative w-64 h-64 snap-start"
                             >
                                 <a
-                                    href={resource.link}
+                                    href={image.link}
                                     className="h-full w-full aspect-square block bg-origin-padding bg-left-top bg-cover bg-no-repeat z-0"
-                                    style={{ backgroundImage: `url(${resource.url || ''})` }}
+                                    style={{ backgroundImage: `url(${image.url || ''})` }}
                                 >
                                     <img
-                                        src={resource.url || ''}
-                                        alt={resource.title}
+                                        src={image.url || ''}
+                                        alt={image.title}
                                         className="w-full aspect-square hidden"
                                     />
                                 </a>
                                 <a
-                                    href={resource.link}
+                                    href={image.link}
                                     className="h-full w-full aspect-square block absolute top-0 left-0 transition-opacity duration-300 opacity-0 hover:opacity-100 bg-blue-800/75 z-10"
                                 >
                                     <h3 className="text-white py-6 px-3 mx-auto text-xl">
-                                        {resource.title}
+                                        {image.title}
                                     </h3>
                                 </a>
                             </div>
@@ -108,4 +112,3 @@ export const Carousel = ({block}) => {
         </div>
     );
 };
-
