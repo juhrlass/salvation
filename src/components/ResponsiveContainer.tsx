@@ -1,5 +1,5 @@
-import { cn } from "../lib/utils";
-import { DynamicComponent } from "./DynamicComponent.js"
+import { cn } from "@/lib/utils";
+import { DynamicComponent } from "@/components/DynamicComponent.tsx"
 import {ResponsiveContainerComponent} from "salvation";
 
 interface ResponsiveContainerProps {

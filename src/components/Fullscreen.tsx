@@ -1,5 +1,5 @@
-import { cn } from "../lib/utils";
-import {DynamicComponent} from "./DynamicComponent.tsx";
+import { cn } from "@/lib/utils";
+import {DynamicComponent} from "@/components/DynamicComponent.tsx";
 import {FullscreenComponent} from "salvation";
 
 interface FullscreenProps {

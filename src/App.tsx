@@ -5,7 +5,7 @@ import {
   useLoaderData,
 } from "react-router-dom"
 
-import { DynamicComponent } from "./components/DynamicComponent.tsx"
+import { DynamicComponent } from "@/components/DynamicComponent.tsx"
 import data from "./content.json"
 
 function Scene() {
@@ -27,7 +27,7 @@ const router = createBrowserRouter([
     path: "/scene/:slug",
     loader: ({ params }) => {
       return params.slug
-    },
+    } ,
     element: <Scene />,
   },
 ])

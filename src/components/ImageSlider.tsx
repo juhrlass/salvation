@@ -3,7 +3,7 @@ import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/20/solid"
 import { ImageSliderComponent } from "salvation"
 import { useInterval } from "usehooks-ts"
 
-import { cn } from "../lib/utils"
+import { cn } from "@/lib/utils"
 
 interface ImageSliderProps {
   block: ImageSliderComponent

@@ -1,17 +1,17 @@
 import React from "react"
 import { Component } from "salvation"
 
-import { BingoGame } from "./BingoGame.tsx"
-import { Card } from "./Card.tsx"
-import { Carousel } from "./Carousel.tsx"
-import { Fullscreen } from "./Fullscreen.tsx"
-import { Grid } from "./Grid.tsx"
-import { Image } from "./Image.tsx"
-import { ImageSlider } from "./ImageSlider.tsx"
-import { Navigation } from "./Navigation.tsx"
-import { ResponsiveContainer } from "./ResponsiveContainer.tsx"
-import Test3D from "./Test3D.tsx"
-import { Video } from "./Video.tsx"
+import { BingoGame } from "@/components/BingoGame.tsx"
+import { Card } from "@/components/Card.tsx"
+import { Carousel } from "@/components/Carousel.tsx"
+import { Fullscreen } from "@/components/Fullscreen.tsx"
+import { Grid } from "@/components/Grid.tsx"
+import { Image } from "@/components/Image.tsx"
+import { ImageSlider } from "@/components/ImageSlider.tsx"
+import { Navigation } from "@/components/Navigation.tsx"
+import { ResponsiveContainer } from "@/components/ResponsiveContainer.tsx"
+import Test3D from "@/components/Test3D.tsx"
+import { Video } from "@/components/Video.tsx"
 
 const dynamicComponents = {
   fullscreen: Fullscreen,
