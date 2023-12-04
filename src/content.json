@@ -114,7 +114,11 @@
           {
             "_uid": "BUY6Dretwaween9e1",
             "component": "bingoGame",
-            "totalNumbers": "75"
+            "totalNumbers": "90"
+          },
+          {
+            "_uid": "BUYaaasdassadasd6Drn9e2",
+            "component": "navigation"
           }
         ]
       }
