@@ -1,5 +1,5 @@
 import {
-  createBrowserRouter,
+  createHashRouter,
   Navigate,
   RouterProvider,
   useLoaderData,
@@ -18,7 +18,7 @@ function Scene() {
   )
 }
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: "*",
     element: <Navigate to="/scene/home" />,

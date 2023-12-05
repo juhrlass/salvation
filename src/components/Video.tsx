@@ -16,6 +16,7 @@ export const Video = (props: VideoProps) => {
         loop
         muted
         className="w-auto min-w-full min-h-full max-w-none"
+        poster="/transparent-background-mini.png"
       >
         <source src={props.block.url} type="video/mp4" />
       </video>

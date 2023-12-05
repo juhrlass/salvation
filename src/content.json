@@ -3,7 +3,7 @@
     "home": [
       {
         "_uid": "43z5ehgdfahh",
-        "component": "fullscreen",
+        "component": "snowFullscreen",
         "children": [
           {
             "_uid": "BUY6Dretwen9e1",

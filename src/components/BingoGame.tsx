@@ -1,11 +1,8 @@
 import { useCallback, useState } from "react";
-import { BingoComponent } from "salvation";
-import {loadConfettiPreset} from "tsparticles-preset-confetti";
 import Particles from "react-particles";
-
-
-
-
+import { BingoComponent } from "salvation";
+import { Engine } from "tsparticles-engine"
+import { loadConfettiPreset } from "tsparticles-preset-confetti"
 
 function getRandomInt(max: number) {
   return Math.floor(Math.random() * max)
@@ -20,11 +17,11 @@ export const BingoGame = (props: BingoGameProps) => {
 
   const [drawnNumbers, setDrawnNumbers] = useState<number[]>([])
   const [currentNumber, setCurrentNumber] = useState<number | null>(null)
-  const [isConfetti, setIsConfetti] = useState(false);
+  const [isConfetti, setIsConfetti] = useState(false)
+  const [canDraw, setCanDraw] = useState(true)
 
-
-  const audio = new Audio("/content/drumroll.mp3");
-  audio.preload="auto"
+  const audio = new Audio("/content/drumroll.mp3")
+  audio.preload = "auto"
 
   const allNumbers = Array.from(
     { length: totalNumbers },
@@ -34,66 +31,62 @@ export const BingoGame = (props: BingoGameProps) => {
     (number) => !drawnNumbers.includes(number)
   )
 
-
-
-  const particlesInit = useCallback(async (engine) => {
-    await loadConfettiPreset(engine);
+  const particlesInit = useCallback(async (engine: Engine) => {
+    await loadConfettiPreset(engine)
   }, [])
 
-  const particlesConfig={
+  const particlesConfig = {
     preset: "confetti",
     emitters: {
-      "startCount": 100,
-      "position": {
-        "x": 50,
-        "y": 15
+      startCount: 100,
+      position: {
+        x: 50,
+        y: 15,
       },
-      "size": {
-        "width": 0,
-        "height": 0
+      size: {
+        width: 0,
+        height: 0,
       },
-      "rate": {
-        "delay": 0,
-        "quantity": 0
+      rate: {
+        delay: 0,
+        quantity: 0,
       },
-      "life": {
-        "duration": 0.1,
-        "count": 1
-      }
+      life: {
+        duration: 0.1,
+        count: 1,
+      },
     },
   }
 
   const drawNextNumber = () => {
     const remainingCount = remainingNumbers.length
     setIsConfetti(false)
+    setCanDraw(false)
     audio.pause()
-    audio.currentTime=0;
+    audio.currentTime = 0
     if (remainingCount > 0) {
-      audio.play()
+      void audio.play()
       const randomIndex = Math.floor(Math.random() * remainingCount)
       const newNumber = remainingNumbers[randomIndex]
 
-      let start = 0
-      const end = 200
-
       const durationInMs = 1750
-
-      const incrementTime = durationInMs / end
 
       // timer increments start counter
       // then updates count
       // ends if start reaches end
-
+      const startTimeStamp = new Date().getTime()
       const timer = setInterval(() => {
-        start += 1
         setCurrentNumber(getRandomInt(totalNumbers))
-        if (start === end) {
+        const currentTimeStamp = new Date().getTime()
+
+        if (startTimeStamp + durationInMs <= currentTimeStamp) {
           setCurrentNumber(newNumber)
           setDrawnNumbers([...drawnNumbers, newNumber])
           setIsConfetti(true)
+          setCanDraw(true)
           clearInterval(timer)
         }
-      }, incrementTime)
+      }, 50)
 
       // setCurrentNumber(newNumber)
     } else {
@@ -123,13 +116,18 @@ export const BingoGame = (props: BingoGameProps) => {
             {currentNumber ? currentNumber : "-"}
           </p>
 
-          {isConfetti &&<Particles options={particlesConfig} init={particlesInit} />}
+          {isConfetti && (
+            <Particles options={particlesConfig} init={particlesInit} />
+          )}
         </div>
         <div className="justify-start flex flex-col">
           {" "}
           <button
-            className="bg-green-500 text-white text-xl font-bold px-4 py-2 rounded-full hover:bg-green-600 w-32 aspect-square"
+            className={
+              "bg-green-500 disabled:opacity-25 text-white text-xl font-bold px-4 py-2 rounded-full hover:bg-green-600 w-32 aspect-square"
+            }
             onClick={drawNextNumber}
+            disabled={!canDraw}
           >
             Nächste Zahl
           </button>

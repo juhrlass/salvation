@@ -12,9 +12,11 @@ import { Navigation } from "@/components/Navigation.tsx"
 import { ResponsiveContainer } from "@/components/ResponsiveContainer.tsx"
 import Test3D from "@/components/Test3D.tsx"
 import { Video } from "@/components/Video.tsx"
+import {SnowFullscreen} from "@/components/SnowFullscreen.tsx";
 
 const dynamicComponents = {
   fullscreen: Fullscreen,
+  snowFullscreen:SnowFullscreen,
   card: Card,
   grid: Grid,
   logo: Image,

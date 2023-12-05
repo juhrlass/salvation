@@ -3556,6 +3556,15 @@ tsparticles-preset-confetti@^2.12.0:
     tsparticles-updater-tilt "^2.12.0"
     tsparticles-updater-wobble "^2.12.0"
 
+tsparticles-preset-snow@^2.12.0:
+  version "2.12.0"
+  resolved "https://registry.yarnpkg.com/tsparticles-preset-snow/-/tsparticles-preset-snow-2.12.0.tgz#b8655d0b2511b0715e77632e06bc7e0ae6346959"
+  integrity sha512-BKQeSIIslKJA0YTLluPf4Y1LXTvjxH6u8nTczYAxqstMNlRoREeCH+pn5hDtHfYUKxEBvrnQmHaRIi+6Bg2RyQ==
+  dependencies:
+    tsparticles-basic "^2.12.0"
+    tsparticles-engine "^2.12.0"
+    tsparticles-updater-wobble "^2.12.0"
+
 tsparticles-shape-circle@^2.12.0:
   version "2.12.0"
   resolved "https://registry.yarnpkg.com/tsparticles-shape-circle/-/tsparticles-shape-circle-2.12.0.tgz#52757d222145c3f80b02d3c51e6158aee0af024c"
