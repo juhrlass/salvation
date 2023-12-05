@@ -13,6 +13,7 @@ import { ResponsiveContainer } from "@/components/ResponsiveContainer.tsx"
 import Test3D from "@/components/Test3D.tsx"
 import { Video } from "@/components/Video.tsx"
 import {SnowFullscreen} from "@/components/SnowFullscreen.tsx";
+import {DisclosureGame} from "@/components/DisclosureGame.tsx";
 
 const dynamicComponents = {
   fullscreen: Fullscreen,
@@ -25,6 +26,7 @@ const dynamicComponents = {
   carousel: Carousel,
   imageSlider: ImageSlider,
   bingoGame: BingoGame,
+  disclosureGame: DisclosureGame,
   test3d: Test3D,
   navigation: Navigation,
 }

@@ -41,6 +41,12 @@
                     "title": "Bingo Demo"
                   },
                   {
+                    "_uid": "23243ew4555",
+                    "component": "card",
+                    "link": "/scene/disclosure",
+                    "title": "Disclosure Demo"
+                  },
+                  {
                     "_uid": "345523",
                     "component": "card",
                     "link": "/scene/images",
@@ -118,6 +124,27 @@
           },
           {
             "_uid": "BUYaaasdassadasd6Drn9e2",
+            "component": "navigation"
+          }
+        ]
+      }
+    ],
+    "disclosure": [
+      {
+        "_uid": "wraehj45z4eradtt34e5",
+        "component": "fullscreen",
+        "children": [
+          {
+            "_uid": "4356ertet3ijrtd",
+            "component": "navigation"
+          },
+          {
+            "_uid": "BUY6Dretwaween9e1",
+            "component": "disclosureGame",
+            "totalNumbers": "10000"
+          },
+          {
+            "_uid": "BUYaaasdrewtetassadasd6Drn9e2",
             "component": "navigation"
           }
         ]

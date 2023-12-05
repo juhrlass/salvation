@@ -12,8 +12,13 @@ declare module 'salvation' {
         "url" :string
     }
 
-    export interface BingoComponent extends Component {
+    export interface BingoGameComponent extends Component {
        "totalNumbers": number
+    }
+
+
+    export interface DisclosureGameComponent extends Component {
+        "duration": number
     }
 
     export interface LinkableImage {

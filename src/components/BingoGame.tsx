@@ -1,6 +1,6 @@
 import { useCallback, useState } from "react";
 import Particles from "react-particles";
-import { BingoComponent } from "salvation";
+import { BingoGameComponent } from "salvation";
 import { Engine } from "tsparticles-engine"
 import { tsParticles } from "tsparticles-engine";
 
@@ -13,7 +13,7 @@ function getRandomInt(max: number) {
 }
 
 interface BingoGameProps {
-  block: BingoComponent
+  block: BingoGameComponent
 }
 
 export const BingoGame = (props: BingoGameProps) => {
