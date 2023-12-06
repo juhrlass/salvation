@@ -1,0 +1,46 @@
+name: build dist files
+
+on:
+  workflow_call:
+    inputs:
+      ref:
+        required: true
+        type: string
+      timezone:
+        required: true
+        type: string
+
+jobs:
+  build-dist:
+    runs-on: ubuntu-22.04
+    steps:
+
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ inputs.ref }}
+      - name: Setup nodejs
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+          cache: 'yarn'
+
+      - name: Run yarn install
+        run: yarn install
+
+      - name: Copy .env.template to .env
+        run: cp .env.template .env && ls
+      - name: Set timezone (Build timestamps are based on this)
+        run: sudo timedatectl set-timezone ${{ inputs.timezone }}
+      - name: Run yarn build
+        run: yarn build
+
+      - name: List dist files
+        run: ls dist
+
+      - name: Upload dist
+        uses: actions/upload-artifact@v3
+        with:
+          name: salvation-dist
+          path: dist
+          retention-days: 1
