@@ -1,12 +1,18 @@
-name: build dist files
+name: Build distribution artifacts
 
 on:
   workflow_call:
     inputs:
+# ref is the name of the branch to use for checkout e.g. 'main' or 'dev'
       ref:
         required: true
         type: string
+# timezone is the TZ identifier of the tz database e.g. "Europe/Berlin"
       timezone:
+        required: true
+        type: string
+# distname is the name of the distribution artifact to produce and upload to github artifacts
+      distname:
         required: true
         type: string
 
@@ -14,7 +20,6 @@ jobs:
   build-dist:
     runs-on: ubuntu-22.04
     steps:
-
       - name: Checkout
         uses: actions/checkout@v3
         with:
@@ -41,6 +46,6 @@ jobs:
       - name: Upload dist
         uses: actions/upload-artifact@v3
         with:
-          name: salvation-dist
+          name: ${{ inputs.distname }}
           path: dist
           retention-days: 1
